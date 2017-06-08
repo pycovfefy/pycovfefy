@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 import pytest
 
 from click.testing import CliRunner
@@ -10,9 +9,10 @@ from pycovfefy import pycovfefy
 from pycovfefy import cli
 
 
-@pytest.mark.parametrize("word,expected_covfefe", [
-    ['coverage', 'covfefe']
-])
+@pytest.mark.parametrize("word,expected_covfefe",
+                         [['coverage', 'covfefe'], ['mexicans', 'mexxixi'],
+                          ['wall', 'wallala'], ['president', 'preszizi'],
+                          ['programming', 'progkaka']])
 def get_covfefe(word, expected_covfefe):
     assert pycovfefy.get_covfefe(word) == expected_covfefe
 
