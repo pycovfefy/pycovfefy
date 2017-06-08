@@ -21,9 +21,9 @@ test_requirements = [
 setup(
     name='pycovfefy',
     version='0.1.0',
-    description="Python Boilerplate contains all the boilerplate you need to create a Python package.",
+    description="Python package to covfefy any string.",
     long_description=readme + '\n\n' + history,
-    author="Pyconfefy",
+    author="Pycovfefy",
     author_email='abhishek4@gmail.com',
     url='https://github.com/pycovfefy/pycovfefy',
     packages=[
