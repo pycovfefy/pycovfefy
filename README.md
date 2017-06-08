@@ -14,10 +14,13 @@ In 2017, the President of The United States tweeted: `Despite the constant negat
 
 To install the bleeding edge version follow the following steps:
 
-- $ git clone git@github.com:pycovfefy/pycovfefy.git
-- $ cd pycovfefy
-- $ python setup.py build
-- $ python setup.py install
+```python
+$ git clone git@github.com:pycovfefy/pycovfefy.git
+$ cd pycovfefy
+$ python setup.py build
+$ python setup.py install
+```
+
 
 
 Usage:
