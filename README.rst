@@ -18,7 +18,7 @@ pycovfefy
      :alt: Updates
 
 
-Python Boilerplate contains all the boilerplate you need to create a Python package.
+Python Package and tool to covfefe any word! (work in progress)
 
 
 * Free software: MIT license
