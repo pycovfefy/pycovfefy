@@ -17,6 +17,13 @@ def get_covfefe(word, expected_covfefe):
     assert pycovfefy.get_covfefe(word) == expected_covfefe
 
 
+@pytest.mark.parametrize("words,expected_covfefe",
+                         [['coverage president', 'covfefe preszizi'], ['wall mexicans', 'wallala mexxixi'],
+                          ['python programming', 'pythhoho progkaka']])
+def covfefy(word, expected_covfefe):
+    assert pycovfefy.get_covfefe(word) == expected_covfefe
+
+
 def test_command_line_interface():
     runner = CliRunner()
     result = runner.invoke(cli.main)

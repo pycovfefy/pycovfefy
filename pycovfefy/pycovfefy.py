@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import string
+
+
 NON_VOWELS = 'bcdfghjklmnpqrstvwxz'
 
 
@@ -31,3 +34,9 @@ def get_covfefe(word):
         if not first_consonant_after_first_vowel_found:
             result += i
     return result
+
+
+def covfefy(words):
+    words = words.translate(None, string.punctuation)
+    words = words.split(' ')
+    return ' '.join([get_covfefe(word) for word in words])
