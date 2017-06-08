@@ -2,41 +2,41 @@
 import string
 
 
-class Covfefy(object):
+NON_VOWELS = 'bcdfghjklmnpqrstvwxz'
 
-    def __init__(self):
 
-        self.non_vowels = 'bcdfghjklmnpqrstvwxz'
+def is_vowel(char):
+    return char not in NON_VOWELS
 
-    def is_vowel(self, char):
-        return char not in self.non_vowels
 
-    def char_mapper(self, char):
-        dictionary = 'pgtvkhjglmnbqrzdfwxs'
-        return dictionary[self.non_vowels.index(char)]
+def char_mapper(char):
+    dictionary = 'pgtvkhjglmnbqrzdfwxs'
+    return dictionary[NON_VOWELS.index(char)]
 
-    def get_covfefe(self, word):
-        first_vowel_found = False
-        first_consonant_after_first_vowel_found = False
-        result = ''
-        for i in word:
-            if self.is_vowel(i) and not first_vowel_found:
-                first_vowel_found = True
-            if i in self.non_vowels and first_vowel_found:
-                c = self.char_mapper(i)
-                first_consonant_after_first_vowel_found = True
-                result += i
-            if i not in self.non_vowels and first_consonant_after_first_vowel_found:
-                result += c
-                result += i
-                result += c
-                result += i
-                return result
-            if not first_consonant_after_first_vowel_found:
-                result += i
-        return result
 
-    def transform(self, s):
-        s = s.translate(None, string.punctuation)
-        s = s.split(' ')
-        return ' '.join([self.get_covfefe(word) for word in s])
+def get_covfefe(word):
+    first_vowel_found = False
+    first_consonant_after_first_vowel_found = False
+    result = ''
+    for i in word:
+        if is_vowel(i) and not first_vowel_found:
+            first_vowel_found = True
+        if i in NON_VOWELS and first_vowel_found:
+            c = char_mapper(i)
+            first_consonant_after_first_vowel_found = True
+            result += i
+        if i not in NON_VOWELS and first_consonant_after_first_vowel_found:
+            result += c
+            result += i
+            result += c
+            result += i
+            return result
+        if not first_consonant_after_first_vowel_found:
+            result += i
+    return result
+
+
+def covfefy(s):
+    s = s.translate(None, string.punctuation)
+    s = s.split(' ')
+    return ' '.join([get_covfefe(word) for word in s])
