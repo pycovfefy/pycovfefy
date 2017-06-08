@@ -21,12 +21,11 @@ To install the bleeding edge version follow the following steps:
 
 
 Usage:
-
-    from pycovfefy import Covfefy
-    c = Covfefy()
-    s = c.transform("president coverage")
-    print(s)
-
+```python
+from pycovfefy import covfefy
+s = covfefy("president coverage")
+print(s)
+```
 
 This produces `preszizi covfefe`
 
